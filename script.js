@@ -44,25 +44,24 @@ function startRecording() {
 
     // Evento para cada resultado reconhecido
     recognition.onresult = (event) => {
-        // console.log("Resultado recebido", event);
+        console.log("Resultado recebido", event);
         let interimTranscription = '';
         for (let i = event.resultIndex; i < event.results.length; i++) {
             const transcript = event.results[i][0].transcript;
-            // console.log('Transcrição recebida: ${transcript}');
+            
             if (event.results[i].isFinal) {
                 finalTranscription += transcript + ' ';
             } else {
                 interimTranscription += transcript;
             }
         }
-        transcription.innerHTML = '<p>${finalTranscription}</p>' + 
-                                  '<p style="color: gray;">${interimTranscription}</p>';
+        transcription.innerHTML = '<p>'+ finalTranscription +'</p>';
     };
 
     // Evento de erro
     recognition.onerror = (event) => {
         // console.error("Erro de reconhecimento", event);
-        alert('Erro de reconhecimento: ${event.error}');
+        alert('Erro de reconhecimento: ' + event.error);
     };
 
     // Iniciar o reconhecimento de voz
