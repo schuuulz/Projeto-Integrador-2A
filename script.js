@@ -21,7 +21,7 @@ function startRecording() {
     recognition = new webkitSpeechRecognition();
     recognition.lang = langSelect.value;
 
-    // console.log(`Idioma selecionado: ${recognition.lang}`);
+    // console.log('Idioma selecionado: ${recognition.lang}');
 
     recognition.continuous = true; // Continuar reconhecendo mesmo após pausas
     recognition.interimResults = true; // Mostrar resultados intermediários
@@ -48,21 +48,21 @@ function startRecording() {
         let interimTranscription = '';
         for (let i = event.resultIndex; i < event.results.length; i++) {
             const transcript = event.results[i][0].transcript;
-            // console.log(`Transcrição recebida: ${transcript}`);
+            // console.log('Transcrição recebida: ${transcript}');
             if (event.results[i].isFinal) {
                 finalTranscription += transcript + ' ';
             } else {
                 interimTranscription += transcript;
             }
         }
-        transcription.innerHTML = `<p>${finalTranscription}</p>` + 
-                                  `<p style="color: gray;">${interimTranscription}</p>`;
+        transcription.innerHTML = '<p>${finalTranscription}</p>' + 
+                                  '<p style="color: gray;">${interimTranscription}</p>';
     };
 
     // Evento de erro
     recognition.onerror = (event) => {
         // console.error("Erro de reconhecimento", event);
-        alert(`Erro de reconhecimento: ${event.error}`);
+        alert('Erro de reconhecimento: ${event.error}');
     };
 
     // Iniciar o reconhecimento de voz
