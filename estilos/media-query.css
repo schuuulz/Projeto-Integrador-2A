@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+@media screen and (min-width: 548px) and (max-width: 640px) {
+
+    .container {
+        width: 90%;
+        height: 60vh;
+    }
+    
+    #lang-select {
+        margin: 10px;
+        padding: 10px;
+        font-size: 16px;
+    }
+    #transcription {
+        max-width: 100%;
+        min-height: 24vh;
+        max-height: 95vh;
+    }
+    
+    #transcription > p {
+        max-width: 100%;
+        text-align: justify;
+    }
+
+}
+
+@media screen and (min-width: 640px)  {
+
+    .container {
+        width: 1045px;
+        height: 74%;
+    }
+    #transcription {
+        max-width: 1024px;
+        min-height: 50vh;
+        max-height: 95vh;
+    }
+
+
+
+}

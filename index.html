@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcrição de Áudio em Tempo Real</title>
+    <link rel="shortcut icon" href="favico.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./estilos/styles.css">
+    <link rel="stylesheet" href="./estilos/media-query.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Transcrição de Áudio em Tempo Real</h1>
+        <button id="start-record-btn" onclick="startRecording()">Iniciar Gravação</button>
+        <button id="stop-record-btn" onclick="stopRecording()" disabled>Parar Gravação</button>
+        <select id="lang-select">
+            <option value="pt-BR">Português (Brasil)</option>
+            <option value="en-US">Inglês (EUA)</option>
+            <option value="es-ES">Espanhol (Espanha)</option>
+            <option value="fr-FR">Francês (França)</option>
+            <!-- Adicione mais idiomas conforme necessário -->
+        </select>
+        <div id="transcription"></div>
+        <div>
+            <p>Desenvolvido por Thiago Schulz</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
