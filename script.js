@@ -52,10 +52,11 @@ function startRecording() {
             if (event.results[i].isFinal) {
                 finalTranscription += transcript + ' ';
             } else {
-                interimTranscription += transcript;
+                // interimTranscription += transcript;
             }
         }
-        transcription.innerHTML = '<p>'+ finalTranscription +'</p>';
+        transcription.innerHTML = '<p>'+ finalTranscription +'</p>'+
+                                    '<p style=color:gray>'+ interimTranscription+'</p>';
     };
 
     // Evento de erro
