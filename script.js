@@ -20,10 +20,9 @@ function startRecording() {
     // Criar uma nova instância do SpeechRecognition
     recognition = new webkitSpeechRecognition();
     recognition.lang = langSelect.value;
-
     // console.log('Idioma selecionado: ${recognition.lang}');
 
-    recognition.continuous = false; // Continuar reconhecendo mesmo após pausas
+    recognition.continuous = true; // Continuar reconhecendo mesmo após pausas
     recognition.interimResults = true; // Mostrar resultados intermediários
 
     // Evento quando a gravação começa
