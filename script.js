@@ -23,7 +23,7 @@ function startRecording() {
 
     // console.log('Idioma selecionado: ${recognition.lang}');
 
-    recognition.continuous = true; // Continuar reconhecendo mesmo após pausas
+    recognition.continuous = false; // Continuar reconhecendo mesmo após pausas
     recognition.interimResults = true; // Mostrar resultados intermediários
 
     // Evento quando a gravação começa
@@ -52,7 +52,7 @@ function startRecording() {
             if (event.results[i].isFinal) {
                 finalTranscription += transcript + ' ';
             } else {
-                // interimTranscription += transcript;
+                interimTranscription += transcript;
             }
         }
         transcription.innerHTML = '<p>'+ finalTranscription +'</p>'+
